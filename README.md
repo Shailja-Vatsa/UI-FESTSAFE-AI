@@ -6,23 +6,7 @@ Predict hospital surge capacity for events (festivals, concerts, marathons)
 Recommend optimal resource allocation (staffing, supplies, beds)
 Provide public health advisories
 Enable multi-agent decision-making for healthcare operations
-Architecture:
-┌─────────────┐     ┌──────────────┐     ┌─────────────┐
-│   Frontend  │────:arrow_forwards:│   Backend    │────:arrow_forwards:│  ML Service │
-│   (React)   │:arrow_backwards:────│   (FastAPI)  │:arrow_backwards:────│  (PyTorch)  │
-└─────────────┘     └──────────────┘     └─────────────┘
-                            │
-                            ▼
-                    ┌──────────────┐
-                    │  PostgreSQL  │
-                    │ (TimescaleDB)│
-                    └──────────────┘
-                            │
-                    ┌───────┴───────┐
-                    │               │
-            ┌───────▼────┐  ┌──────▼──────┐
-            │   Redis    │  │   Kafka/    │
-            │  (Cache)   │  │  RabbitMQ   │
+
             └────────────┘  └─────────────┘
 Key Features:
 Real-time Forecasting: Predict patient surge with <500ms latency
